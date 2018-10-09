@@ -18,6 +18,7 @@ public class LoginDao {
 		QueryRunner queryRunner = new QueryRunner(JdbcUtils.getDataSource());
 		String sql = "select * from user where username = ? and password = ? ";
 		Object [] params = {user.getUsername(), user.getPassword()};
+		Object [] params1 = {user.getUsername(), user.getPassword()};
         return queryRunner.query(sql, new BeanHandler<User>(User.class), params);
     }
 }
